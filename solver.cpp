@@ -2,6 +2,9 @@
 #include "field.h"
 #include <cmath>
 
+#define SQRT2 1.414214
+#define PI 3.1415926
+
 Simu::Simu(int nx, int ny, double dt, int total_step) : field(nx, ny), dt(dt), total_step(total_step)
 {
 }
@@ -141,6 +144,6 @@ void evol_boundary_angle_11(double Bz_old, double Bz_left_down_old){
 double Simu::get_inject(int i, int j, int t)
 {
     // TODO: need to change
-    double omega = 1;
+    double omega = 2 * PI;
     return std::sin(omega * t);
 }
